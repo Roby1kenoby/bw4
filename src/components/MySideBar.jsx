@@ -18,7 +18,7 @@ function MySideBar() {
           }
         );
         const result = await response.json();
-        console.log(result); // Aggiunto console.log per vedere i dati recuperati
+        console.log(result); //console.log per vedere i dati recuperati
         setData(result);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -26,7 +26,7 @@ function MySideBar() {
     };
 
     fetchData();
-  }, []); // L'array vuoto come secondo argomento assicura che l'effetto venga eseguito solo una volta al montaggio
+  }, []);
 
   return (
     <div className="ms-3">
