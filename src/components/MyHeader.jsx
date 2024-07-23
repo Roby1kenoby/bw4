@@ -1,8 +1,12 @@
 import './MyHeader.css'
+import MyNav from './MyNav';
 
 function MyHeader() {
     return ( 
-        <div>Header</div>
+        <>
+            <MyNav />
+        </>
+
     );
 }
 
