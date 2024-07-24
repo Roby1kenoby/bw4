@@ -8,13 +8,16 @@ import { UserContextProvider } from './components/contexts/UserContextProvider';
 import HomePage from './components/pages/HomePage';
 
 
+import MyNav from './components/MyNav';
 
 function App() {
 
   return (
     <UserContextProvider>
       <BrowserRouter>
-        <MyHeader />
+      <MyHeader>
+      <MyNav />
+      </MyHeader>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/profile/:id" element={<HomePage />} />
@@ -24,6 +27,7 @@ function App() {
         <MyFooter />
       </BrowserRouter>
     </UserContextProvider>
+    
   );
 }
 
