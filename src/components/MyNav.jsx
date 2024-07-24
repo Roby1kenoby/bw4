@@ -4,20 +4,28 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { UserContext } from "./contexts/UserContextProvider";
 function MyNav() {
-  const [imgProfile, setImgProfile] = useState("");
+//   const [imgProfile, setImgProfile] = useState("");
+  const { selectedUser } = useContext(UserContext);
+  const [meUser, setMeUser] = useState(null)
 
-  useEffect(() => {
-    fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${process.env.REACT_APP_APIKEY}`,
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => setImgProfile(data));
-  }, []);
+//   useEffect(() => {
+//     fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: `Bearer ${process.env.REACT_APP_APIKEY}`,
+//       },
+//     })
+//       .then((response) => response.json())
+//       .then((data) => setImgProfile(data));
+//   }, []);
+
+useEffect(()=>{
+setMeUser(selectedUser)
+},[selectedUser])
+
 
   return (
     <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
@@ -162,24 +170,24 @@ function MyNav() {
             <div className="d-flex flex-column align-items-center">
               <NavDropdown
                 title={
-                  <img src={imgProfile.image} alt="" className="rounded-circle1" />
+                  <img src={meUser?.image} alt="" className="rounded-circle1" />
                 }
                 id="collapsible-nav-dropdown"
               >
                 <NavDropdown.Item className="dropDownItem xm">
                   <div className="d-flex">
                     <img
-                      src={imgProfile.image}
+                      src={meUser?.image}
                       className="rounded-circle2"
                       alt=""
                     />
                     <div className="d-flex flex-column mx-2">
                       <>
                         <p className="dropDownName">
-                          {imgProfile.name} {imgProfile.surname}
+                          {meUser?.name} {meUser?.surname}
                         </p>
                       </>
-                      <span className="dropDownTitle">{imgProfile.title}</span>
+                      <span className="dropDownTitle">{meUser?.title}</span>
                     </div>
                   </div>
                 </NavDropdown.Item >
