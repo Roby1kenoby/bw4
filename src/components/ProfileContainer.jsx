@@ -14,7 +14,6 @@ function ProfilePage({id}) {
 
     const { selectedUser, setSelectedUser } = useContext(UserContext)
 
-    console.log(selectedUser)
     // funzione che effettua la fetch
     const getProfileData = async () => {
         const resp = await fetch(getProfileUrl + '/' + id, {
@@ -27,7 +26,6 @@ function ProfilePage({id}) {
 
         const data = await resp.json()
         setUser(data)
-        console.log(data)
     }
     
     useEffect(() => {

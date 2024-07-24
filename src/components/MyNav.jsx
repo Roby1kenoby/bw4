@@ -7,24 +7,12 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { useState, useEffect, useContext } from "react";
 import { UserContext } from "./contexts/UserContextProvider";
 function MyNav() {
-//   const [imgProfile, setImgProfile] = useState("");
-  const { selectedUser } = useContext(UserContext);
-  const [meUser, setMeUser] = useState(null)
 
-//   useEffect(() => {
-//     fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
-//       headers: {
-//         "Content-Type": "application/json",
-//         Authorization: `Bearer ${process.env.REACT_APP_APIKEY}`,
-//       },
-//     })
-//       .then((response) => response.json())
-//       .then((data) => setImgProfile(data));
-//   }, []);
+// il jsx si rirenderizza se cambia una prop. il context è a tutti gli effetti una prop
+// quando termina la fetch, selectedUser cambia e di conseguenza il jsx si renderizz di nuovo
+// se avessi bisogno di far partire una funzione al cambio di selectedUser, invece, dovrei usare useEffect
+const { selectedUser } = useContext(UserContext);
 
-useEffect(()=>{
-setMeUser(selectedUser)
-},[selectedUser])
 
 
   return (
@@ -71,7 +59,7 @@ setMeUser(selectedUser)
                     viewBox="0 0 24 24"
                     data-supported-dps="24x24"
                     fill="currentColor"
-                    class="mercado-match"
+                    className="mercado-match"
                     width="24"
                     height="24"
                     focusable="false"
@@ -88,7 +76,7 @@ setMeUser(selectedUser)
                     viewBox="0 0 24 24"
                     data-supported-dps="24x24"
                     fill="currentColor"
-                    class="mercado-match"
+                    className="mercado-match"
                     width="24"
                     height="24"
                     focusable="false"
@@ -105,7 +93,7 @@ setMeUser(selectedUser)
                     viewBox="0 0 24 24"
                     data-supported-dps="24x24"
                     fill="currentColor"
-                    class="mercado-match"
+                    className="mercado-match"
                     width="24"
                     height="24"
                     focusable="false"
@@ -122,7 +110,7 @@ setMeUser(selectedUser)
                     viewBox="0 0 24 24"
                     data-supported-dps="24x24"
                     fill="currentColor"
-                    class="mercado-match"
+                    className="mercado-match"
                     width="24"
                     height="24"
                     focusable="false"
@@ -139,7 +127,7 @@ setMeUser(selectedUser)
                     viewBox="0 0 24 24"
                     data-supported-dps="24x24"
                     fill="currentColor"
-                    class="mercado-match"
+                    className="mercado-match"
                     width="24"
                     height="24"
                     focusable="false"
@@ -156,7 +144,7 @@ setMeUser(selectedUser)
                     viewBox="0 0 24 24"
                     data-supported-dps="24x24"
                     fill="currentColor"
-                    class="mercado-match"
+                    className="mercado-match"
                     width="24"
                     height="24"
                     focusable="false"
@@ -170,24 +158,24 @@ setMeUser(selectedUser)
             <div className="d-flex flex-column align-items-center">
               <NavDropdown
                 title={
-                  <img src={meUser?.image} alt="" className="rounded-circle1" />
+                  <img src={selectedUser?.image} alt="" className="rounded-circle1" />
                 }
                 id="collapsible-nav-dropdown"
               >
                 <NavDropdown.Item className="dropDownItem xm">
                   <div className="d-flex">
                     <img
-                      src={meUser?.image}
+                      src={selectedUser?.image}
                       className="rounded-circle2"
                       alt=""
                     />
                     <div className="d-flex flex-column mx-2">
                       <>
                         <p className="dropDownName">
-                          {meUser?.name} {meUser?.surname}
+                          {selectedUser?.name} {selectedUser?.surname}
                         </p>
                       </>
-                      <span className="dropDownTitle">{meUser?.title}</span>
+                      <span className="dropDownTitle">{selectedUser?.title}</span>
                     </div>
                   </div>
                 </NavDropdown.Item >
@@ -230,7 +218,7 @@ setMeUser(selectedUser)
                     viewBox="0 0 24 24"
                     data-supported-dps="24x24"
                     fill="currentColor"
-                    class="mercado-match"
+                    className="mercado-match"
                     width="24"
                     height="24"
                     focusable="false"
