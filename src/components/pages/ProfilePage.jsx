@@ -6,6 +6,8 @@ import { useContext, useEffect } from 'react';
 import { UserContext } from '../contexts/UserContextProvider';
 
 function ProfilePage() {
+// da spostare nel componente ProfileContainer, qui dentro ci devono andare quello e l'experience container
+
     // recupero dall'url l'id del profilo da caricare
     const { id } = useParams();
     // chiave per la fetch
@@ -27,11 +29,13 @@ function ProfilePage() {
         setSelectedUser(data)
         console.log(data)
     }
-
+    
     useEffect(() => { getProfileData() }, [])
 
     return (
-        <Container id='profileContainer'>
+        // selectedUser && mi serve perchè così evito di andare in errore perchè la roba della fetch non è ancora arrivata
+        // renderizzo il componente solo quando ci sono anche i dati al suo interno
+        selectedUser && <Container id='profileContainer'>
             <div id='upperSection'>
                 <Button id='editPhoto'>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#0966c2" className="bi bi-camera-fill" viewBox="0 0 16 16">
