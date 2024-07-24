@@ -65,4 +65,63 @@
     color: #5C3B09;
     text-decoration: underline;
     font-size: 11px;
+    cursor: pointer;
+}
+
+.rounded-circle2 {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.dropDownName{
+  font-weight: 500;
+}
+
+.dropDownTitle{
+  font-size: 14px;
+  margin-top: -0.7rem;
+}
+
+.dropDownButton{
+  width: 14rem;
+  background-color: white;
+  color: #0A66C2;
+  border-radius: 20px;
+  border: solid 2px #0A66C2;
+  border-color: #0A66C2;
+  padding: 0rem;
+}
+
+.dropDownButton:hover{
+  background-color: #0A66C2;
+  color: white;
+}
+
+.dropDownLink{
+  color: #A0A0A0;
+  font-size: 14px;
+}
+
+.non-click {
+  pointer-events: none;
+}
+
+.click{
+  pointer-events: auto;
+}
+
+.dropDownLink:hover{
+  text-decoration: underline;
+}
+
+.dropDownItem:active, .dropDownItem:hover {
+  background-color: transparent !important;
+}
+
+@media (min-width: 992px) {
+  .navbar-expand-lg .navbar-nav .dropdown-menu {
+      position: absolute;
+      margin-top: 2rem;
+  }
 }

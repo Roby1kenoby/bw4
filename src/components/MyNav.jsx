@@ -5,9 +5,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 function MyNav() {
-  const [imgProfile, setImgProfile] = useState(null);
+  const [imgProfile, setImgProfile] = useState("");
 
   useEffect(() => {
     fetch("https://striveschool-api.herokuapp.com/api/profile/me", {
@@ -17,7 +16,7 @@ function MyNav() {
       },
     })
       .then((response) => response.json())
-      .then((data) => setImgProfile(data.image));
+      .then((data) => setImgProfile(data));
   }, []);
 
   return (
@@ -162,19 +161,53 @@ function MyNav() {
             </div>
             <div className="d-flex flex-column align-items-center">
               <NavDropdown
-                title={<img src={imgProfile} className="rounded-circle1" />}
+                title={
+                  <img src={imgProfile.image} alt="" className="rounded-circle1" />
+                }
                 id="collapsible-nav-dropdown"
               >
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
+                <NavDropdown.Item className="dropDownItem xm">
+                  <div className="d-flex">
+                    <img
+                      src={imgProfile.image}
+                      className="rounded-circle2"
+                      alt=""
+                    />
+                    <div className="d-flex flex-column mx-2">
+                      <>
+                        <p className="dropDownName">
+                          {imgProfile.name} {imgProfile.surname}
+                        </p>
+                      </>
+                      <span className="dropDownTitle">{imgProfile.title}</span>
+                    </div>
+                  </div>
+                </NavDropdown.Item >
+                <NavDropdown.Item className="d-flex justify-content-center non-click dropDownItem">
+                  <button className="dropDownButton click">Visualizza profilo</button>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
+                <NavDropdown.Item className="non-click dropDownItem">
+                  <div className="d-flex flex-column gap-2">
+                    <h6 className="dropDownName non-click">Account</h6>
+                    <span className="dropDownLink click">Impostazione e privacy</span>
+                    <span className="dropDownLink click">Guida</span>
+                    <span className="dropDownLink click">Lingua</span>
+                  </div>
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item className="non-click dropDownItem">
+                  <div className="d-flex flex-column gap-2">
+                    <h6 className="dropDownName click">Gestisci</h6>
+                    <span className="dropDownLink click">Post e attività</span>
+                    <span className="dropDownLink click">
+                      Account per la pubblicazione di off...
+                    </span>
+                  </div>
+                </NavDropdown.Item>
+                <NavDropdown.Divider />
+                <NavDropdown.Item className="non-click dropDownItem">
+                  <span className="dropDownLink click">Esci</span>
                 </NavDropdown.Item>
               </NavDropdown>
               <span className="icon-text-s">Tu</span>
@@ -182,6 +215,7 @@ function MyNav() {
 
             <div className="d-flex flex-column align-items-center border-left">
               <NavDropdown
+              className="non-click"
                 title={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -199,21 +233,16 @@ function MyNav() {
                 }
                 id="collapsible-nav-dropdown"
               >
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
               </NavDropdown>
               <span className="icon-text-s2">Per le aziende</span>
             </div>
-            <div style={{ marginTop: "0.3rem", width: "7rem", textAlign : "center" }}>
+            <div
+              style={{
+                marginTop: "0.3rem",
+                width: "7rem",
+                textAlign: "center",
+              }}
+            >
               <span className="premium2">Prova premium per 0 EUR</span>
             </div>
           </Nav>
