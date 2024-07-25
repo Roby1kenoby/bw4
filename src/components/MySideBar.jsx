@@ -19,7 +19,7 @@ function MySideBar() {
           }
         );
         const result = await response.json();
-        console.log(result); // console.log per vedere i dati recuperati
+        // console.log(result); // console.log per vedere i dati recuperati
         setData(result);
       } catch (error) {
         console.error("Error fetching data:", error);
