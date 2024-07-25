@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
-import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
+import './MySideBar.css';
 
 function MySideBar() {
   const [data, setData] = useState([]);
@@ -18,7 +19,7 @@ function MySideBar() {
           }
         );
         const result = await response.json();
-        console.log(result); //console.log per vedere i dati recuperati
+        console.log(result); // console.log per vedere i dati recuperati
         setData(result);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -30,33 +31,36 @@ function MySideBar() {
 
   return (
     <div className="ms-3">
-        <p><b>Altri profili simili</b></p>
+      <p><b>Altri profili simili</b></p>
       {data.slice(412, 422).map((profile, index) => (
         <section
           key={index}
-          style={{ width: "400px", height: "150px", marginBottom: "1rem" }}
+          className="profiliSimili"
         >
           <div className="d-flex">
             <Image
-              style={{ width: "50px", height: "50px" }}
               src={profile.image}
               roundedCircle
-              className="me-3"
+              className="me-3 imgProfile"
             />
-            <Card.Body
-              className="d-flex flex-column justify-content-between"
-              style={{ width: "70%" }}
+            <div
+              className="d-flex flex-column justify-content-between containerText"
             >
               <div>
-                <Card.Title>
+                <p className="nameProfile">
                   {profile.name} {profile.surname}
-                </Card.Title>
-                <Card.Text>{profile.title}</Card.Text>
+                </p>
+                <p className="titleProfile">{profile.title}</p>
               </div>
-              <Button variant="primary" style={{ width: "50%" }}>
+              <Button
+                as={Link}
+                to={`/profile/${profile._id}`}
+                variant="primary"
+                className="detailsBtn"
+              >
                 Details
               </Button>
-            </Card.Body>
+            </div>
           </div>
         </section>
       ))}
