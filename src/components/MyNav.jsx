@@ -1,4 +1,4 @@
-import { Form } from "react-bootstrap";
+import { Button, Form } from "react-bootstrap";
 import "./MyNav.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
@@ -6,6 +6,7 @@ import Navbar from "react-bootstrap/Navbar";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useState, useEffect, useContext } from "react";
 import { UserContext } from "./contexts/UserContextProvider";
+import { Link } from "react-router-dom";
 function MyNav() {
 
 // il jsx si rirenderizza se cambia una prop. il context è a tutti gli effetti una prop
@@ -16,7 +17,7 @@ const { selectedUser } = useContext(UserContext);
 
 
   return (
-    <Navbar  className="bg-body">
+    <Navbar className="bg-body">
       <Container >
         <Navbar.Brand href="#home">
           <svg
@@ -180,7 +181,7 @@ const { selectedUser } = useContext(UserContext);
                   </div>
                 </NavDropdown.Item >
                 <NavDropdown.Item className="d-flex justify-content-center non-click dropDownItem">
-                  <button className="dropDownButton click">Visualizza profilo</button>
+                  <Button as ={Link} to="/" className="dropDownButton click">Visualizza profilo</Button>
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item className="non-click dropDownItem">
@@ -232,12 +233,13 @@ const { selectedUser } = useContext(UserContext);
               </NavDropdown>
               <span className="icon-text-s2">Per le aziende</span>
             </div>
-            <div
+            <div className= "premium2"
               style={{
                 marginTop: "0.3rem",
                 width: "7rem",
                 textAlign: "center",
               }}
+              
             >
               <span className="premium2">Prova premium per 0 EUR</span>
             </div>

@@ -1,6 +1,11 @@
+.footer {
+    margin-top: 5rem;
+}
+
 .footer p {
   font-size: 0.7rem;
   color: #666666;
+  margin : 0;
 }
 
 .footer p:hover,
