@@ -16,8 +16,8 @@ const { selectedUser } = useContext(UserContext);
 
 
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
-      <Container>
+    <Navbar  className="bg-body">
+      <Container >
         <Navbar.Brand href="#home">
           <svg
             className="logo"
@@ -38,8 +38,8 @@ const { selectedUser } = useContext(UserContext);
             ></path>
           </svg>
         </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
+        
+        
           <Nav className="me-auto">
             <div className="divSearch">
               <Form className="input-search">
@@ -211,7 +211,7 @@ const { selectedUser } = useContext(UserContext);
 
             <div className="d-flex flex-column align-items-center border-left">
               <NavDropdown
-              className="non-click"
+              className="non-click non-visible"
                 title={
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -242,7 +242,7 @@ const { selectedUser } = useContext(UserContext);
               <span className="premium2">Prova premium per 0 EUR</span>
             </div>
           </Nav>
-        </Navbar.Collapse>
+        
       </Container>
     </Navbar>
   );
