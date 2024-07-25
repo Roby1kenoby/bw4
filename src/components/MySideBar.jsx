@@ -6,7 +6,7 @@ import './MySideBar.css';
 
 function MySideBar() {
   const [data, setData] = useState([]);
-
+  const apiKey = process.env.REACT_APP_APIKEY
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -14,7 +14,7 @@ function MySideBar() {
           `https://striveschool-api.herokuapp.com/api/profile/`,
           {
             headers: {
-              Authorization: `Bearer ${process.env.REACT_APP_ANTONIO}`,
+              Authorization: apiKey
             },
           }
         );
