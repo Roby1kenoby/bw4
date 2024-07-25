@@ -1,0 +1,14 @@
+.footer p {
+  font-size: 0.7rem;
+  color: #666666;
+}
+
+.footer p:hover,
+.footer h5:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.footer-text {
+  margin-left: 1rem;
+}
