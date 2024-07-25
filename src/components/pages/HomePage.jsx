@@ -30,7 +30,7 @@ function HomePage() {
     return ( 
         <>
             <ProfileContainer id={userId}/>
-            <AddExperience></AddExperience>
+            <AddExperience id={userId}></AddExperience>
             <ExperienceContainer id={userId}/>
         </>
     );
