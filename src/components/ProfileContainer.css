@@ -1,5 +1,6 @@
 #profileContainer{
-    border: 1px solid black;
+    margin-top: 1.5em;
+    border: 1px solid gray;
     border-radius: 1em;
     padding: 0;
     position: relative;
@@ -32,7 +33,6 @@
 #mainImgWrapper{
     width: 10em;
     border-radius: 50%;
-    position: absolute;
     bottom: 80%;
 }
 
@@ -44,13 +44,58 @@
     width: 100%;
     border-radius: 50%;
     position: absolute;
+    bottom: -2.5em;
+    left: 1em;
 }
 
 #innerImgWrapper svg{
     z-index: 1;
+    width: 100%;
     position: absolute;
+    bottom: -2.5em;
+    left: 1em;
+    overflow: visible;
 }
 
 #lowerSection{
     padding-top: 3.5em;
+    padding-left: 1em;
+}
+
+#lowerSection h5{
+    font-weight: bolder !important;
+    margin: 0;
+}
+
+#lowerSection p:nth-child(2) {
+    color: grey;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+#lowerSection p:nth-child(3) {
+    color: #A4A4A4;
+    
+}
+
+#buttons{
+    padding-left: 1em;
+    padding-bottom: 1em;
+    display: flex;
+    gap: 1em;
+}
+
+#buttons button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 1em;
+    gap: 0.5em;
+}
+
+#buttons button:nth-child(2) {
+    background-color: white;
+    color: black;
+    border: 1.2px solid black
+    
 }

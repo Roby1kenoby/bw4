@@ -4,6 +4,7 @@ import './HomePage.css'
 import ProfileContainer from '../ProfileContainer'
 import ExperienceContainer from '../ExperienceContainer'
 import { UserContext } from '../contexts/UserContextProvider';
+import AddExperience from '../AddExperience';
 
 function HomePage() {
     // stato per gestire l'id dell'utente di cui vogliamo vedere il profilo
@@ -29,6 +30,7 @@ function HomePage() {
     return ( 
         <>
             <ProfileContainer id={userId}/>
+            <AddExperience></AddExperience>
             <ExperienceContainer id={userId}/>
         </>
     );

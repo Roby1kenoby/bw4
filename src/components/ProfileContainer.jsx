@@ -5,7 +5,7 @@ import { useContext, useEffect, useState } from 'react';
 import { UserContext } from './contexts/UserContextProvider';
 
 
-function ProfilePage({id}) {
+function ProfilePage({ id }) {
     // l'id lo ricevo direttamente dal componente padre    
     const [user, setUser] = useState(null)
 
@@ -27,11 +27,11 @@ function ProfilePage({id}) {
         const data = await resp.json()
         setUser(data)
     }
-    
+
     useEffect(() => {
         id && id != selectedUser?._id ? getProfileData() : setUser(selectedUser)
     }, [id, selectedUser])
-    
+
     return (
         // selectedUser && mi serve perchè così evito di andare in errore perchè la roba della fetch non è ancora arrivata
         // renderizzo il componente solo quando ci sono anche i dati al suo interno
@@ -46,16 +46,27 @@ function ProfilePage({id}) {
             </div>
             <div id='mainImgWrapper'>
                 <div id="innerImgWrapper">
-                    <svg viewBox="0 0 100 100" >
-                        <circle cx="50" cy="50" r="49" fill="transparent" stroke="white" strokeWidth="3"></circle>
+                    <svg viewBox="0 0 160 160" >
+                        <circle cx="80" cy="80" r="79" fill="transparent" stroke="white" strokeWidth="5"></circle>
                     </svg>
                     <img src={user.image} alt="" />
                 </div>
             </div>
             <div id='lowerSection'>
-                <h5>{user.name + user.surname}</h5>
+                <h5>{user.name + ' ' + user.surname}</h5>
                 <p>{user.title}</p>
                 <p>{user.area}</p>
+            </div>
+            <div id='buttons'>
+                <Button>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-send-fill" viewBox="0 0 16 16">
+                        <path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471z" />
+                    </svg>
+                    <span>Messaggio</span>
+                </Button>
+                <Button>
+                    Altro
+                </Button>
             </div>
         </Container>
     );
