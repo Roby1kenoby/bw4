@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import './MySideBar.css';
+import { Container } from "react-bootstrap";
 
 function MySideBar() {
   const [data, setData] = useState([]);
@@ -30,41 +31,46 @@ function MySideBar() {
   }, []);
 
   return (
-    <div className="ms-3">
-      <p><b>Altri profili simili</b></p>
-      {data.slice(412, 422).map((profile, index) => (
-        <section
-          key={index}
-          className="profiliSimili"
-        >
-          <div className="d-flex">
-            <Image
-              src={profile.image}
-              roundedCircle
-              className="me-3 imgProfile"
-            />
-            <div
-              className="d-flex flex-column justify-content-between containerText"
-            >
-              <div>
-                <p className="nameProfile">
-                  {profile.name} {profile.surname}
-                </p>
-                <p className="titleProfile">{profile.title}</p>
-              </div>
-              <Button
-                as={Link}
-                to={`/profile/${profile._id}`}
-                variant="primary"
-                className="detailsBtn"
+    <Container id="sideContainer">
+      <div className="ms-3">
+        <p><b>Altri profili simili</b></p>
+        {data.slice(412, 422).map((profile, index) => (
+          <section
+            key={index}
+            className="profiliSimili"
+          >
+            <div className="d-flex">
+              <Image
+                src={profile.image}
+                roundedCircle
+                className="me-3 imgProfile"
+              />
+              <div
+                className="d-flex flex-column justify-content-between containerText"
               >
-                Details
-              </Button>
+                <div>
+                  <p className="nameProfile">
+                    {profile.name} {profile.surname}
+                  </p>
+                  <p className="titleProfile">{profile.title}</p>
+                </div>
+                <Button
+                  as={Link}
+                  to={`/profile/${profile._id}`}
+                  variant="primary"
+                  className="detailsBtn"
+                >
+                  Details
+                </Button>
+              </div>
             </div>
-          </div>
-        </section>
-      ))}
-    </div>
+            <hr></hr>
+          </section>
+          
+        ))}
+        
+      </div>
+    </Container>
   );
 }
 
