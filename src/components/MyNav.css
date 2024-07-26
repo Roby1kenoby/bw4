@@ -78,18 +78,18 @@
 }
 
 .dropDownButton{
-  width: 14rem;
-  background-color: white;
-  color: #0A66C2;
-  border-radius: 20px;
-  border: solid 2px #0A66C2;
-  border-color: #0A66C2;
-  padding: 0rem;
+  width: 14rem !important;
+  background-color: white !important;
+  color: #0A66C2 !important;
+  border-radius: 20px !important;
+  border: solid 2px #0A66C2 !important;
+  border-color: #0A66C2 !important;
+  padding: 0rem !important;
 }
 
 .dropDownButton:hover{
-  background-color: #0A66C2;
-  color: white;
+  background-color: #0A66C2 !important;
+  color: white !important;
 }
 
 .dropDownLink{
