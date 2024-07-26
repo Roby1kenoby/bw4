@@ -57,7 +57,7 @@ function MySideBar() {
                 <Button
                   as={Link}
                   to={`/profile/${profile._id}`}
-                  variant="primary"
+                  variant="outline-light"
                   className="detailsBtn"
                 >
                   Details
