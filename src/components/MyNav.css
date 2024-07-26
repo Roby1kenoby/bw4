@@ -130,8 +130,9 @@
   }
   .border-left {
     border-left: 0px;
-    margin-left: 1rem;
+   
   }
+ 
 }
 
 @media  (min-width: 576px) and (max-width: 768px) {
@@ -147,6 +148,16 @@
   }
   .border-left {
     border-left: 0px;
-    margin-left: 1rem;
+    
+  }
+}
+
+@media  (min-width: 768px) and (max-width: 992px) {
+  .divSearch, .icon-text-s2, .non-visible, .premium2{
+    display: none;
+  }
+  .border-left {
+    border-left: 0px;
+   
   }
 }
