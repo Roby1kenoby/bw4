@@ -10,7 +10,7 @@ function SingleComment({ comment, expChanged, setExpChanged }) {
     const id = comment.user
     const commentId = comment._id
     const {selectedUser, setSelectedUser} = useContext(UserContext)
-    console.log(comment)
+    
 
     const sd = moment(comment.startDate)
     const ed = moment(comment.endDate)
