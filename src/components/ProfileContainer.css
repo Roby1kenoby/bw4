@@ -59,6 +59,12 @@
     overflow: visible;
 }
 
+.imgForm{
+    position: absolute;
+    bottom: 0em;
+    left: 13em; 
+}
+
 #lowerSection{
     padding-top: 3.5em;
     padding-left: 1em;
