@@ -12,9 +12,9 @@ function ExperienceContainer({id}) {
             }
         })
         const data = await resp.json()
-        console.log(data)
+        // console.log(data)
     }
-    getExperiences()
+    // getExperiences()
     return ( 
         <ul>
             
