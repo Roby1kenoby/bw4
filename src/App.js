@@ -16,22 +16,24 @@ function App() {
   return (
     <UserContextProvider>
       <BrowserRouter>
-      <MyHeader>
-      <MyNav />
-      </MyHeader>
-        <Container>
-          <Row>
-            <Col sm={12} md={9}>
-              <Routes>
-                <Route path="/" element={<HomePage />} />
-                <Route path="/profile/:id" element={<HomePage />} />
-                <Route path="/*" element={<NotFound />} />
-              </Routes>
-            </Col>
-            <Col sm={12} md={3}><MySideBar /></Col>
-          </Row>
-        </Container>
-        <MyFooter />
+      <div className='mainContainer'>
+        <MyHeader>
+        <MyNav />
+        </MyHeader>
+          <Container>
+            <Row>
+              <Col sm={12} md={9}>
+                <Routes>
+                  <Route path="/" element={<HomePage />} />
+                  <Route path="/profile/:id" element={<HomePage />} />
+                  <Route path="/*" element={<NotFound />} />
+                </Routes>
+              </Col>
+              <Col sm={12} md={3}><MySideBar /></Col>
+            </Row>
+          </Container>
+          <MyFooter />
+      </div>
       </BrowserRouter>
     </UserContextProvider>
     

@@ -32,7 +32,7 @@ function MySideBar() {
 
   return (
     <Container id="sideContainer">
-      <div className="ms-3">
+      <div>
         <p><b>Altri profili simili</b></p>
         {data.slice(412, 422).map((profile, index) => (
           <section

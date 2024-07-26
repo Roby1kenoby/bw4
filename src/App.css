@@ -1,6 +1,9 @@
 .App {
   text-align: center;
-  background-color: rgb(197, 197, 197);
+}
+
+.mainContainer {
+    background-color: #F5F2EE !important;
 }
 
 .App-logo {

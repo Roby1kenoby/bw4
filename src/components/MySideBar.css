@@ -1,10 +1,11 @@
 #sideContainer{
-    margin-top: 1.2em;
+    margin-top: 1.4em;
+    background-color: white;
+    border-radius: 1em;
+    border: 1px solid #ededed;
 }
 
 .profiliSimili{
-    width: 400px;
-    height: 150px;
     margin-bottom: 0,5rem; 
 }
 
@@ -15,7 +16,7 @@
 
 
 .containerText{
-     width: 70%;
+    width: 70%;
 }
 
 .nameProfile{
@@ -36,6 +37,11 @@
     margin-left: 10px;
     width: 100px;
     border-radius: 50px !important;
-    border: blue 1px solid !important;
-    color: blue !important;
+    border: #181818 1px solid !important;
+    color: #181818 !important;
+}
+
+.detailsBtn:hover{
+    background-color: #F3F3F3 !important;
+    border: #181818 2px solid !important;
 }
