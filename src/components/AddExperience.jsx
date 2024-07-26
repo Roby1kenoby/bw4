@@ -4,7 +4,7 @@ import { useContext, useEffect, useState } from 'react';
 import {getProfileUrl} from '../fetchUrls'
 import { UserContext } from './contexts/UserContextProvider';
 
-function AddExperience({id}) {
+function AddExperience({id, expChanged, setExpChanged}) {
     
     const apiKey = process.env.REACT_APP_APIKEY;
     
@@ -39,7 +39,6 @@ function AddExperience({id}) {
 
     // funzione per inserire l'esperienza nel backend
     const saveExperience = async function(){
-        console.log(exp)
         const resp = await fetch(getProfileUrl+'/'+id+'/experiences',{
             method: 'POST',
             headers: {
@@ -49,7 +48,13 @@ function AddExperience({id}) {
             body: JSON.stringify(exp)
         })
 
-        resp.ok ? setExp(voidExp) : console.log('error')
+        if(resp.ok) {
+            setExp(voidExp); 
+            setExpChanged(!expChanged)
+        }
+        else{
+            console.log('error')
+        } 
     }
     // stato per mostrare il form su click del button
     const [showForm, setShowForm] = useState('none')

@@ -9,6 +9,7 @@ import AddExperience from '../AddExperience';
 function HomePage() {
     // stato per gestire l'id dell'utente di cui vogliamo vedere il profilo
     const [userId, setUserId] = useState(null)
+    const [expChanged, setExpChanged] = useState(false)
 
     // mi memorizzo in id se c'è un id nell'url
     const { id } = useParams();
@@ -30,8 +31,8 @@ function HomePage() {
     return ( 
         <>
             <ProfileContainer id={userId}/>
-            <AddExperience id={userId}></AddExperience>
-            <ExperienceContainer id={userId}/>
+            <AddExperience id={userId} expChanged={expChanged} setExpChanged={setExpChanged}></AddExperience>
+            <ExperienceContainer id={userId} expChanged={expChanged} setExpChanged={setExpChanged}/>
         </>
     );
 }
