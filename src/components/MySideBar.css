@@ -34,5 +34,8 @@
 .detailsBtn{
     margin-top: 0.5rem;
     margin-left: 10px;
-     width: 100px;
+    width: 100px;
+    border-radius: 50px !important;
+    border: blue 1px solid !important;
+    color: blue !important;
 }
