@@ -64,39 +64,45 @@ function AddExperience({id, expChanged, setExpChanged}) {
             <Button onClick={() => {showForm === 'none' ? setShowForm('block') : setShowForm('none')}}>
                 Add Experiences
             </Button>
+            
             <Form style={{display: showForm}}>
-                <Form.Group>
-                    <Form.Label>Role</Form.Label>
-                    <Form.Control
-                        placeholder="Role" name='role' type='text'
-                        value={exp.role}
-                        onChange={updateInput}
-                    />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Company</Form.Label>
-                    <Form.Control
-                        placeholder="Company" name='company' type='text'
-                        value={exp.company}
-                        onChange={updateInput}
-                    />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>Start Date</Form.Label>
-                    <Form.Control
-                        name='startDate' type='date'
-                        value={exp.startDate}
-                        onChange={updateInput}
-                    />
-                </Form.Group>
-                <Form.Group>
-                    <Form.Label>End Date</Form.Label>
-                    <Form.Control
-                        name='endDate' type='date'
-                        value={exp.endDate}
-                        onChange={updateInput}
-                    />
-                </Form.Group>
+                <hr></hr>
+                <div className='topRow'>
+                    <Form.Group>
+                        <Form.Label>Role</Form.Label>
+                        <Form.Control
+                            placeholder="Role" name='role' type='text'
+                            value={exp.role}
+                            onChange={updateInput}
+                        />
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>Company</Form.Label>
+                        <Form.Control
+                            placeholder="Company" name='company' type='text'
+                            value={exp.company}
+                            onChange={updateInput}
+                        />
+                    </Form.Group>
+                </div>
+                <div className='datesRow'>
+                    <Form.Group>
+                        <Form.Label>Start Date</Form.Label>
+                        <Form.Control
+                            name='startDate' type='date'
+                            value={exp.startDate}
+                            onChange={updateInput}
+                        />
+                    </Form.Group>
+                    <Form.Group>
+                        <Form.Label>End Date</Form.Label>
+                        <Form.Control
+                            name='endDate' type='date'
+                            value={exp.endDate}
+                            onChange={updateInput}
+                        />
+                    </Form.Group>
+                </div>
                 <Form.Group>
                     <Form.Label>Area</Form.Label>
                     <Form.Control
@@ -105,17 +111,23 @@ function AddExperience({id, expChanged, setExpChanged}) {
                         onChange={updateInput}
                     />
                 </Form.Group>
-                <Form.Group>
-                    <Form.Label>Description
-                        <textarea
-                            placeholder="Description" name='description'
-                            value={exp.description}
-                            onChange={updateInput}
-                        />
-                    </Form.Label>
-                </Form.Group>
+                <div className='descriptionRow'>
+                    <Form.Group>
+                        <Form.Label className='textArea' style={{width: "100%"}}>Description
+                            <Form.Control
+                                as="textarea"
+                                placeholder="Description" name='description'
+                                value={exp.description}
+                                onChange={updateInput}
+                                rows={3}
+                            />
+                        </Form.Label>
+                    </Form.Group>
+                </div>
+                <hr></hr>
             </Form>
-            <Button variant='success' onClick={saveExperience} style={{display: showForm}}>Save Experience</Button>
+            
+            <Button id="saveButton" variant='success' onClick={saveExperience} style={{display: showForm}}>Save Experience</Button>
         </Container>
     );
 }
