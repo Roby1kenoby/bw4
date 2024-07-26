@@ -92,7 +92,7 @@ function ProfilePage({ id }) {
                     {editMode &&
                         <form className='imgForm'>
                             <input type="file" onChange={handleFile} />
-                            <button onClick={() => {changePhoto()}}>SEND</button>
+                            <Button onClick={() => {changePhoto()}}>SEND</Button>
                         </form>
                     }
                 </div>
