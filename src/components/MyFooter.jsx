@@ -5,16 +5,16 @@ function MyFooter() {
   return (
     <Container className="footer">
       <Row className="align-items-center">
-        <Col>
+        <Col >
           <p>Informazioni</p>
         </Col>
-        <Col>
+        <Col sm={12} md={3}>
           <p>Accessibilità</p>
         </Col>
-        <Col>
+        <Col sm={12} md={3}>
           <p>Talent Solutions</p>
         </Col>
-        <Col>
+        <Col sm={12} md={3}>
           <div className="d-flex">
             <div className="footer-icons">
               <svg
@@ -36,16 +36,16 @@ function MyFooter() {
         </Col>
       </Row>
       <Row className="align-items-center">
-        <Col>
+        <Col sm={12} md={3}>
           <p>Informativa sulla community <br></br> professionale</p>
         </Col>
-        <Col>
+        <Col sm={12} md={3}>
           <p>Carriera</p>
         </Col>
-        <Col>
+        <Col sm={12} md={3}>
           <p>Soluzioni di marketing</p>
         </Col>
-        <Col>
+        <Col sm={12} md={3}>
           <div className="d-flex">
             <div className="footer-icons">
               <svg
@@ -67,16 +67,16 @@ function MyFooter() {
         </Col>
       </Row>
       <Row className="align-items-center">
-        <Col>
+        <Col sm={12} md={3}>
           <p>Privacy e condizioni</p>
         </Col>
-        <Col>
+        <Col sm={12} md={3}>
           <p>Opzioni per gli annunci <br></br> pubblicitari</p>
         </Col>
-        <Col>
+        <Col sm={12} md={3}>
           <p>Pubblicità</p>
         </Col>
-        <Col>
+        <Col sm={12} md={3}>
           <div className="d-flex">
             <div className="footer-icons">
               <svg
@@ -101,21 +101,21 @@ function MyFooter() {
         </Col>
       </Row>
       <Row className="align-items-center">
-        <Col>
+        <Col sm={12} md={3}>
           <p>Sales solutions</p>
         </Col>
-        <Col>
+        <Col sm={12} md={3}>
           <p>Mobile</p>
         </Col>
-        <Col>
+        <Col sm={12} md={3}>
           <p>Piccole imprese</p>
         </Col>
-        <Col>
+        <Col sm={12} md={3}>
           <p></p>
         </Col>
       </Row>
       <Row className="align-items-center">
-        <Col>
+        <Col sm={12} md={3}>
           <p>Centro sicurezza</p>
         </Col>
       </Row>
